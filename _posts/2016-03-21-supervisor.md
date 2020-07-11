@@ -68,6 +68,8 @@ numprocs=1
 directory=/tmp
 
 ; 掩码:--- -w- -w-, 转换后rwx r-x w-x
+
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
 umask=022
 
 ; 优先级，值越高的程序将最后被启动最先被关闭，默认值 999

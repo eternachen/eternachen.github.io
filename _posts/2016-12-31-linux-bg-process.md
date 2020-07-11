@@ -7,6 +7,8 @@ category: Linux
 tags: linux screen
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 在 Linux 系统中的终端工作时，有时需要将当前任务暂停调至后台，或有时须将后台暂停的任务重新开启并调至前台，这一序列的操作将会使用到 jobs、bg、和 fg 三个命令。
 
 ## jobs

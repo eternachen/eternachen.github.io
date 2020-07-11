@@ -6,6 +6,8 @@ category: Linux
 tags: linux
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 #### 检查文件系统的磁盘受用情况：`df`
 
 * -a 显示所有文件系统的磁盘使用情况

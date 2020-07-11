@@ -6,6 +6,8 @@ category: Linux
 tags: linux
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 ## Linux 安全性模型概述
 
 Linux使用User（用户）和Group（组）控制使用者对文件的存取权限，在Linux系统中被创建的用户，可以使用账号和口令登录Linux。Linux系统将一切视为文件，每个文件都有owner,并且owner属于某个Group。

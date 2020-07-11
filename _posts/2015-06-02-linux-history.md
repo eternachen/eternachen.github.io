@@ -6,6 +6,8 @@ category: Linux
 tags: linux
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 #### 1. 让 history 显示时间戳
 如果要让 history 在显示历史命令时同时显示记录命令的时间，则需要设置如下环境变量：
 > $ export HISTTIMEFORMAT='%F %T '

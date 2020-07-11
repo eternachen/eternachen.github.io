@@ -7,6 +7,8 @@ category: Linux
 tags: linux
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 Centos 5 默认的 gcc 版本为 4.1，某些软件在其上会编译不过，自己编译高版本的 gcc 可能也会遇到一些问题，比较麻烦。但有一个第三方库可以解决这个问题，即 `devtoolset`。devtoolset 有很多版本，例如 devtoolset-2(gcc-4.8.2)、devtoolset-3(gcc-4.9.2)、devtoolset-4(gcc-5.2.1)。
 
 具体的安装步骤如下：

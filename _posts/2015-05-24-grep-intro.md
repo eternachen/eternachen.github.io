@@ -6,6 +6,8 @@ category: Linux
 tags: linux
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 **1、从单个文件中搜索指定的字符串**
 
 > $ grep "literal-string" filename

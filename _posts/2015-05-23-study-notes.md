@@ -6,6 +6,8 @@ category: 学习札记
 tags: 札记
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 1、 `Linux`<br/>
 在 ubuntu 下添加用户名最好用 **adduser** 命令，例如：
 > $ sudo adduser git

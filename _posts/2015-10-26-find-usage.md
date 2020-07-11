@@ -6,6 +6,8 @@ category: Linux
 tags: linux
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 Linux 下 find 命令用于在目录结构中查找文件，同时还可以对查找结果进行指定的操作。Find 命令具有很强大的搜索功能，可以遍历整个文件系统。所以 find 命令很耗资源，有时候甚至会耗费很长时间，因此建议把它放在后台执行。Find 命令格式如下所示：
 
 > find pathname -options [-print -exec -ok ...]

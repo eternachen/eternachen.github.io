@@ -7,6 +7,8 @@ category: 计算机科学
 tags: git
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 `git rebase` 与 `git merge` 的区别在于，`merge` 会将不同分支的提交合并成一个新的节点，之前的提交分开显示；而 `rebase` 则是将两个分支的提交融合成一个线性的提交。
 
 如下图所示，一个项目在 C2 时基于主分支创建了一个 `experiment` 分支，并做了一个 C3 版本的提交：

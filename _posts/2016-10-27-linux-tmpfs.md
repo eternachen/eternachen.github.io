@@ -7,6 +7,8 @@ category: Linux
 tags: linux 共享内存 shm
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 `tmpfs` 是 Linux/Unix 系统上的一种基于内存的文件系统，即 tmpfs 使用内存或 swap 分区来存储文件。
 
 Linux 内核中的 VM 子系统负责在后台管理虚拟内存资源 Virtual Memory，即 RAM 和 swap 资源，透明地将 RAM 页移动到交换分区或从交换分区到 RAM 页，tmpfs 文件系统需要 VM 子系统的页面来存储文件。tmpfs 自己并不知道这些页面是在交换分区还是在 RAM 中；做这种决定是 VM 子系统的工作。tmpfs 文件系统所知道的就是它正在使用某种形式的虚拟内存。

@@ -6,6 +6,8 @@ category: 学习札记
 tags: 札记
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 ## Linux 文件链接
 （1） 硬链接
 即是同一个文件在文件系统中的不同名字，这些名字都指向同一个 inode， “ls -l”显示信息的第二栏便是文件的硬链接数。

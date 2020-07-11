@@ -1,10 +1,12 @@
----
+git---
 layout: post
 title: MarkDown 编辑器推荐
 keywords: MarkDown 编辑器
 category: 文本编辑
 tags: markdown
 ---
+
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
 
 为了搭建独立博客，折腾了许久，最终将博客搭建在了免费且不限流量的[Github](http://github.com/)上。Github给托管在github上的项目提供了 github pages 功能，用于给项目提供主页。对于再github上搭建博客的问题，我看知乎上存在争议，有人认为 github pages 本意是想给项目和个人提供主页，用来写博客有些不道德。个人认为，只要不用于任何商业用途，再github上写博客并没有违背github的宗旨。Github pages 有两种模式，其中一种就是用于个人主页的，再个人主页上撰写一些技术类文章，分享一些经验和感悟，这不正符合github的开源精神吗。
 

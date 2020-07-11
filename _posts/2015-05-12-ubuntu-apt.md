@@ -6,6 +6,8 @@ keywords: apt apt-get 软件包管理
 tags: ubuntu
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 我所了解到的 Ubuntu 系统中的 APT 工具用两个：**apt-get** & **apt-cache**。这都是 Ubuntu 系统中的软件包管理工具。Apt-get 主要用于软件包的安装和卸载操作，apt-cache 主要用于软件包的搜索查询操作。对于本地软件包的管理，Ubuntu系统中还有一个更强大的工具 **dpkg**，以后有时间将对其进行详细的讲解。以下列举这两个工具的具体操作：
 
 **1. 更新或升级操作：**

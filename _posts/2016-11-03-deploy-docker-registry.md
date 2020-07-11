@@ -7,6 +7,8 @@ category: 容器技术
 tags: docker registry
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 Docker 官方提供一个 `registry` 镜像来让需要的人自己搭建私有仓库。因此部署仓库的服务器需要有 Docker 环境。
 
 ## 简单部署

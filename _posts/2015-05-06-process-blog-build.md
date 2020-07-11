@@ -6,6 +6,8 @@ category: 我的日志
 tags: 博客 jekyll markdown
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 自从接触Web设计以来，就一直想搭建一个自己的独立博客。之前一直在用第三方的博客，我选择的是[网易](http://konghy.blog.163.com/)。网易博客很少有广告，而且可以自命名一个二级域名，其另一个产品 [LOFTER](http://konghy.lofter.com/) 也不错。那么为什么还要搭建一个独立博客呢，我大致总结了以下原因：
 
 > **1.**对自由的追求,可完全自主

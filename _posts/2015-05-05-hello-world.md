@@ -6,6 +6,8 @@ keywords: 日志 hello world 你好 世界
 tags: 博客
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 虽然毕业参加工作以来还不到一年的时间，但想想自己现在也已经是奔三的年纪。回想自己开始学编程时，已经18岁了。这岂不是远远的被别人落在了起跑线上。
 
 ![imge1](http://7xixhp.com1.z0.glb.clouddn.com/schw.jpg)

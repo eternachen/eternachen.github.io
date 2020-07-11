@@ -6,6 +6,8 @@ category: Linux
 tags: linux vim
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 1、用 Linux 自带的工具：`more`、`less`
 
 2、安装vim和vim插件[LargFile](http://www.vim.org/scripts/script.php?script_id=1506)

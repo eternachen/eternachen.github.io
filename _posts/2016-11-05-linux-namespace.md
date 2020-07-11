@@ -7,6 +7,8 @@ category: 容器技术
 tags: linux namespace docker
 ---
 
+> 声明：以下blog转载自[旷世的忧伤 Huoty's Blog](http://kuanghy.github.io/)，一切权利归原作者所有。
+
 Docker 在技术上实际并没有什么创新，而是整合了很多现有的技术。Docker 用到的核心技术包括 `Namespace`、`CGroup`、`UnionFS` 等等。
 
 ## Namespace 简介
