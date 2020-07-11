@@ -1,7 +1,7 @@
-旷世的忧伤 | Huoty's Blog
+九里大集 | Eternachen's Blog
 =======================
 
-我的 Github 博客，博客模板引用自 [Harmony](https://github.com/gayanvirajith/harmony) 自适应 Jekyll 主题，并对其做了部分修改。
+我的 Github 博客，博客模板引用自 [Kuanghy](http://kuanghy.github.io/) 自适应 Jekyll 主题，并对其做了部分修改。
 
 - Built for jekyll 2.x
 - Supports Google analytics and RSS feeds
