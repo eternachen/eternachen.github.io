@@ -71,3 +71,5 @@ exclude:
 sass:
     sass_dir: assets/css/_sass
     style: :compressed
+
+theme: jekyll-theme-tactile
