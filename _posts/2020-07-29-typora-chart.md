@@ -32,7 +32,7 @@ Daughter ->> Son : "My dear brother"
 Son --> Dad : "Hi Dad,\nI am naughty"
 ```
 
-![序列图示例](/assets/img/20200729_sequncechart.png)
+![序列图示例](/assets/img/20200729_sequencechart.jpg)
 
 ## 流程图
 
