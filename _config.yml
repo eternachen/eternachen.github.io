@@ -12,6 +12,13 @@ url: http://eternachen.github.io
 # Production URL for sitemap
 production_url: http://eternachen.github.io
 
+# Static image folder
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
 # Harmony theme configuration. Please change accordingly.
 harmony:
   name: 九里大集
