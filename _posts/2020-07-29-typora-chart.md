@@ -32,7 +32,7 @@ Daughter ->> Son : "My dear brother"
 Son --> Dad : "Hi Dad,\nI am naughty"
 ```
 
-![序列图示例](/assets/images/20200729_sequncechart.png)
+![序列图示例](/assets/img/20200729_sequncechart.png)
 
 ## 流程图
 
@@ -60,7 +60,7 @@ para(path1,bottom)->sub1(right)->op1
 para(path2,top)->op1
 ```
 
-![流程示例1](/assets/images/20200729_flowchart1.jpg)
+![流程示例1](/assets/img/20200729_flowchart1.jpg)
 
 #### 示例 2 - 复杂流程图
 
@@ -97,7 +97,7 @@ cond(no)->sub2(right)->op1
 st@>op1({"stroke":"Red"})@>sub1({"stroke":"Red"})@>cond({"stroke":"Red"})@>io({"stroke":"Red"})@>op2({"stroke":"Red"})@>cond2({"stroke":"Red"})@>sub3({"stroke":"Red"})@>sub4({"stroke":"Red"})@>io2({"stroke":"Red"})@>e({"stroke":"Red","stroke-width":6,"arrow-end":"classic-wide-long"})
 ```
 
-![流程示例2](/assets/images/20200729_flowchart2.jpg)
+![流程示例2](/assets/img/20200729_flowchart2.jpg)
 
 参考
 - [Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
