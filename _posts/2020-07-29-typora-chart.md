@@ -3,7 +3,7 @@ layout: post
 title: "Typora中用markdown绘制序列图和流程图"
 keywords: typora markdown
 description: "Typoro提供了强大的markdown编辑功能，在此之外它还提供了便捷的序列图和流程图绘制功能"
-category: markdown
+category: 文本编辑
 tags: typora markdown sequencechart flowchart
 ---
 
