@@ -21,7 +21,8 @@ tags: typora markdown sequencechart flowchart
 
 ### 示例
 
-```sequence
+```
+​```sequence
 Title: "Jiulidaji's Daily Life"
 Dad -> Mum : "Good morning"
 Mum -> Mum : "I am so lucky"
@@ -44,7 +45,8 @@ Son --> Dad : "Hi Dad,\nI am naughty"
 
 #### 示例 1 - 简单流程图
 
-```flow
+```
+​```flow
 st=>start: Start
 e=>end: End
 op1=>operation: My Operation
@@ -64,7 +66,8 @@ para(path2,top)->op1
 
 #### 示例 2 - 复杂流程图
 
-```flow
+```
+​```flow
 st=>start: Improve your
 l10n process!
 e=>end: Continue to have fun!:>https://youtu.be/YQryHo1iHb8[blank]
