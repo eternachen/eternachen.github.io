@@ -4,13 +4,13 @@
 baseurl:
 
 # Site live URL
-url: http://eternachen.github.io
+url: http://jiulidaji.cn
 
 # Localhost
 # url: http://127.0.0.1:4000
 
 # Production URL for sitemap
-production_url: http://eternachen.github.io
+production_url: http://jiulidaji.cn
 
 # Static image folder
 defaults:
@@ -34,7 +34,7 @@ harmony:
   author: # Author details
     name: 九里大集
     email: jiulidaji@qq.com
-    url: http://eternachen.github.io
+    url: http://jiulidaji.cn
 
   # Google Analytics key, leave blank to ignore
   google_analytics_key: UA-174912147-1
