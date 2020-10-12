@@ -3,7 +3,7 @@ layout: post
 title: "古董电脑与袖珍电脑"
 keywords: t43 raspberry antix linux
 description: "本文讲述了一个IBM Thinkpad T43和一个Raspberry 2B+的故事"
-category: 计算机 
+category: Linux 
 tags: linux raspberry
 ---
 
