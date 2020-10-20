@@ -11,7 +11,7 @@ tags: intellij idea shortcut code template
 
 IDE是程序开发中必不可少的工具，不少工程师在每天大部分的时间都在使用它。
 
-正如天下武功有“气宗”和“剑宗”一样，对于IDE的使用上也有不同的流派。有些人对IDE的功能了然于胸，用的非常纯熟，人剑（IDE）合一；而有些人则把IDE当作一个文本编辑器，主要的编码工作是在自己的头脑中完成，对这些人来说用IDE，VIM，Emacs甚至Notepad其实没有却别；现实中大部分工程师介于二者之间。
+正如天下武功有“气宗”和“剑宗”一样，对于IDE的使用上也有不同的流派。有些人对IDE的功能了然于胸，用的非常纯熟，人剑（IDE）合一；而有些人则把IDE当作一个文本编辑器，主要的编码工作是在自己的头脑中完成，对这些大神来说用IDE，VIM，Emacs甚至Notepad其实没有区别；现实中大部分工程师介于二者之间。
 
 对于一个Java程序员而言，IDEA已经超越Eclipse成为主流IDE。IDEA 全称 IntelliJ IDEA，是java编程语言开发的集成环境。IntelliJ在业界被公认为最好的java开发工具，尤其在智能代码助手、代码自动提示、重构、JavaEE支持、各类版本工具(git、svn等)、JUnit、CVS整合、代码分析、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。它的旗舰版本还支持HTML，CSS，PHP，MySQL，Python等。免费版也支持Java,Kotlin等不少语言。
 
