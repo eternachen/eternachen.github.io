@@ -2,7 +2,7 @@
 layout: post
 title: "以思考的速度码砖 - Intellij Idea快捷键与代码模版"
 keywords: intellij idea shortcut code template
-description: "本文中介绍了笔者在工作中遇到的一个关于systemd的问题"
+description: "本文中介绍了笔者在工作中常用的intellij idea快捷键和代码模版"
 category: 计算机科学 
 tags: intellij idea shortcut code template
 ---
