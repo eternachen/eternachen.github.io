@@ -7,7 +7,7 @@ category: 计算机科学
 tags: AWS Redshift Aurora RedshiftSpectrum
 ---
 
-在本文中，我将尝试介绍笔者在工作中用到的Amazon Redshift，Amazon Redshift Spectrum，Amazon Athena与Amazon Aurora之间的关系与区别，以及何时该应用何种技术的具体实际场景。
+在本文中，我将尝试介绍笔者在工作中用到的Amazon Redshift，Amazon Redshift Spectrum，Amazon Athena与Amazon Aurora之间的关系与区别，以及何时该应用何种技术的实际场景。
 
 让我们从数据库概念开始吧。
 
@@ -44,6 +44,8 @@ tags: AWS Redshift Aurora RedshiftSpectrum
 
 一旦数据存储在数据仓库中，您就可以做出很多复杂的查询（例如，“我们双十一的那周通过iOS应用在杭州卖了多少张票，其中哪些来自南航白金客户？”），而不会影响生产数据库。
 
+
+
 # 数据湖和无服务器查询引擎
 
 随着时间的流逝，南航票务系统数据量越来越多，将所有历史票务销售的副本存储在数据仓库中变得非常昂贵。很多时候，您真正关心的只是最后一个会计月份，季度和年份，对3到5年前的数据访问次数很少。
@@ -57,6 +59,8 @@ tags: AWS Redshift Aurora RedshiftSpectrum
 查询引擎本身不存储数据，它只是完成了运行查询的工作。 “无服务器”部分意味着您无需启动服务器即可按需运行引擎。
 
 在这种背景下，我们继续我们的讨论。
+
+
 
 # Amazon Redshift vs. Redshift Spectrum vs. Amazon Athena vs Amazon Aurora
 
@@ -74,28 +78,33 @@ tags: AWS Redshift Aurora RedshiftSpectrum
 
   
 
-  在我们的南航示例中，南航将使用：
+在我们的南航示例中，南航将使用：
 
 - Amazon Aurora存储机票销售记录
 
 - Amazon Redshift存储短期历史数据以分析他们的机票销售记录
-- Amazon S3，可以更便宜地存储所有长期历史票数据
+- Amazon S3可以更便宜地存储所有长期历史票数据
 - Amazon Redshift Spectrum可将S3中的长期历史数据与Amazon Redshift中的短期历史数据结合起来，例如比较当年票务与10年前票务的多年比较。
-- Amazon Athena，用于在S3中快速临时查询数据，例如回答有关门票销售的单年度问题，该问题只需要S3中的数据，例如“我们10年前的双11卖了几张票？”
+- Amazon Athena用于在S3中快速临时查询数据，例如回答有关门票销售的单年度问题，该问题只需要S3中的数据，例如“我们10年前的双11卖了几张票？”
 
 简而言之，您最终得到一个完整的技术栈，其中Aurora是您的生产数据库，S3数据湖具有您生产数据的长期历史，然后您可以选择三种AWS（Redshift，Redshift Spectrum，Athena ）产品来运行分析生产数据。
 
 接下来的一个问题–您何时使用哪种产品进行分析？
 
-# 放在一起–基于云的分析堆栈
+
+
+# 在一起–基于云的分析栈
+
 使用哪种产品取决于您的工作负载和查询的成本，复杂性和执行速度。
 
 - Amazon Redshift
+
   Amazon Redshift擅长在大型数据集上运行复杂的分析查询，联接和聚集，因为它利用了高性能的本地磁盘，专为复杂的查询执行和联接而优化的数据格式。 Redshift功能非常强大，您甚至可以在仓库内运行ETL的“T”部分，而无需运行某些外部处理引擎，例如Spark或Hadoop。实际上，这是从“ETL”到“ELT”的转变。如果执行速度以及查询和转换的速度至关重要，那么使用Amazon Redshift是必经之路。
 
   但是，这就意味着必须通过数据工程师或DBA将数据加载到仓库中，并根据所需的存储和CPU需求来配置管理Redshift集群。而且，即便是最便宜的价格（具有3年RI的密集存储节点），Redshift的价格还是不菲，大约为1000美元/ TB /年。这是S3的4倍，后者的价格约为250美元/ TB /年。
 
 - Amazon Redshift Spectrum
+
   借助Redshift Spectrum，Amazon Redshift用户可以利用廉价的S3存储，并提取，过滤，聚合，分组和排序数据。
 
   由于Spectrum是无服务器的，因此无需进行配置或管理。 Spectrum的价格为每TB数据扫描5美元。与Redshift相比，S3存储更便宜。与仅在Redshift集群中存储数据相比，S3存储具成本优势。您只需为针对实际扫描的数据运行的查询付费。
@@ -106,10 +115,11 @@ tags: AWS Redshift Aurora RedshiftSpectrum
 
 - Amazon Athena
 
-  雅典娜（Athena）遵循与Spectrum（Spectrum）相同的逻辑，它是无服务器的S3数据查询引擎。它通常仅适用于不需要大规模汇总的简单交互式查询。
+  Amazon Athena遵循与Spectrum（Spectrum）相同的逻辑，它是无服务器的S3数据查询引擎。它通常仅适用于不需要大规模汇总的简单交互式查询。
 
   
+# 总结
 
-  这些功能不是“或/或”选项。根据应用场景，我们看到不少客户同时使用以上服务来进行数据分析。
+这些功能不是“或/或”选项。根据应用场景，我们看到不少客户同时使用以上服务来进行数据分析。
 
-  希望这篇文章对大家有所启发，感谢我的同事们对本篇文章的帮助。
+希望这篇文章对大家有所启发，感谢我的同事们对本篇文章的帮助。
