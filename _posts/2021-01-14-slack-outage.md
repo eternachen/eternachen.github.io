@@ -11,7 +11,7 @@ tags: Slack Outage RCA
 
 
 
-2021年新年伊始，复工第一天，在全球IT公司中比较流行的团队协作软件Slack（企业即时通信工具）就挂了。全球IT从业人员无不欢欣鼓舞，奔走相告，相当于多放一天假。老板们想找人也联系不上，急的干瞪眼。好景不长，Slack第二天就恢复了。本文中将对发生在2021/1/4发生的Slack全球服务中断进行分析。
+2021年新年伊始，复工第一天，在全球IT公司中比较流行的团队协作软件Slack（企业即时通信工具）就挂了。全球IT从业人员无不欢欣鼓舞，奔走相告，相当于多放一天假。老板们想找人也联系不上，急的干瞪眼。好景不长，Slack第二天就恢复了。本文中将对发生在2021/1/4的Slack全球服务中断进行分析。
 
 废话少说，直接上干货。Slack官方事件分析 - [Final Slack Root Cause Analysis (RCA) Report](https://devopsish.com/pdf/Slack-Incident-Jan-04-2021-RCA-Final.pdf)
 
