@@ -35,7 +35,7 @@ tags: opensource elasticsearch aws opendistro
 
 # 杀手锏
 
-ElasticSearch祭起的秘密武器武器是SSPL。
+ElasticSearch祭起的大棒是SSPL。
 
 
 
