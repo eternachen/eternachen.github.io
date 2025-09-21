@@ -4,10 +4,10 @@
 baseurl: ""
 
 # Site live URL
-# url: http://jiulidaji.cn
+url: http://jiulidaji.cn
 
 # Localhost
-url: http://127.0.0.1:4000
+# url: http://127.0.0.1:4000
 
 # Production URL for sitemap
 production_url: http://jiulidaji.cn
