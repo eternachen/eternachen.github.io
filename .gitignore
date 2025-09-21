@@ -12,3 +12,4 @@ Thumbs.db
 .bundle/config
 vendor/bundle.sass-cache/
 Gemfile.lock
+.sass-cache/
