@@ -10,4 +10,5 @@ Thumbs.db
 .rvmrc
 .idea
 .bundle/config
-vendor/bundle
+vendor/bundle.sass-cache/
+Gemfile.lock
