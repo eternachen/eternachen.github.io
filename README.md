@@ -86,3 +86,67 @@ property in `_config.yml`.
 
 Please submit as an [issue](https://github.com/web-create/harmony/issues/new),
 I am happy to response back.
+
+## Local development (macOS)
+
+These notes are macOS-focused and help when native gems (C/C++) need to be built.
+
+1. Install Homebrew if you don't have it:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. Install rbenv (or use your preferred Ruby manager):
+
+```bash
+brew install rbenv ruby-build
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+# Install a Ruby version (example: 3.2.9)
+rbenv install 3.2.9
+rbenv global 3.2.9
+```
+
+3. Install required system libs (OpenSSL) and developer tools:
+
+```bash
+xcode-select --install
+brew install openssl@3 pkg-config
+```
+
+4. Install bundler and project gems (work from the repo root):
+
+```bash
+gem install bundler
+cd /path/to/eternachen.github.io
+# Ensure Bundler will install into vendor/bundle for the repo
+bundle config set --local path 'vendor/bundle'
+
+# Export SDK and OpenSSL locations so native extensions compile
+export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+export CC=clang CXX=clang++
+export CPPFLAGS="-I$(brew --prefix openssl@3)/include -I${SDKROOT}/usr/include"
+export LDFLAGS="-L$(brew --prefix openssl@3)/lib"
+export PKG_CONFIG_PATH="$(brew --prefix openssl@3)/lib/pkgconfig"
+
+bundle install --jobs=4 --retry=3 --verbose
+```
+
+5. Serve the site locally with live reload:
+
+```bash
+bundle exec jekyll serve --livereload
+```
+
+6. Quick verification commands:
+
+```bash
+which ruby
+ruby -v
+bundle -v
+```
+
+Notes
+- If you prefer `asdf` or `rvm` instead of `rbenv`, install Ruby via your manager of choice and ensure the same environment variables are exported before `bundle install`.
+- If `bundle install` fails building native gems, check the `vendor/bundle/.../extensions/.../gem_make.out` file for errors and make sure `SDKROOT`, `CPPFLAGS`, and `LDFLAGS` are set in the same shell where you run `bundle install`.
