@@ -1,7 +1,7 @@
 # Harmony Jekyll theme general configurations
 
 # Base URL
-baseurl:
+baseurl: /
 
 # Site live URL
 url: http://jiulidaji.cn
@@ -77,7 +77,7 @@ exclude:
 # Sass conversion configs
 sass:
     sass_dir: assets/css/_sass
-    style: :compressed
+    style: compressed
 
 theme: minimal-mistakes-jekyll
 
