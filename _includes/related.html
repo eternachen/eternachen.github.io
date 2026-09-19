@@ -1,0 +1,63 @@
+{%- comment -%}
+  相关文章推荐（无参数调用）：{%- include related.html -%}
+  为当前文章挑选最多 5 篇最相关的历史文章。
+  评分：tags 交集命中数 ×2 + categories 相同 ×1 + keywords 交集命中数 ×1。
+  同分按日期新 → 旧排序；命中不足 2 篇则不输出任何内容。
+
+  Liquid 没有集合交集，故对每篇候选构造可排序字符串「分数|日期|下标」，
+  分数补零到两位以保证字典序等于数值序，再 sort 后 reverse 取前 5，
+  用 split | last 取回 site.posts 下标，回读真实文章对象。
+{%- endcomment -%}
+{%- assign related_entries = '' -%}
+{%- assign related_hits = 0 -%}
+{%- assign related_tags = page.tags -%}
+{%- assign related_cats = page.categories -%}
+{%- assign related_keywords = page.keywords | default: '' | split: ' ' -%}
+{%- for post in site.posts -%}
+    {%- if post.url != page.url -%}
+        {%- assign related_score = 0 -%}
+        {%- for tag in related_tags -%}
+            {%- if post.tags contains tag -%}
+                {%- assign related_score = related_score | plus: 2 -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- assign related_cat_match = false -%}
+        {%- for cat in related_cats -%}
+            {%- if post.categories contains cat -%}
+                {%- assign related_cat_match = true -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- if related_cat_match -%}
+            {%- assign related_score = related_score | plus: 1 -%}
+        {%- endif -%}
+        {%- assign post_keywords = post.keywords | default: '' | split: ' ' -%}
+        {%- for keyword in related_keywords -%}
+            {%- if post_keywords contains keyword -%}
+                {%- assign related_score = related_score | plus: 1 -%}
+            {%- endif -%}
+        {%- endfor -%}
+        {%- if related_score > 0 -%}
+            {%- assign related_hits = related_hits | plus: 1 -%}
+            {%- assign related_score_padded = related_score | prepend: '00' | slice: -2, 2 -%}
+            {%- assign related_stamp = post.date | date: '%Y%m%d%H%M%S' -%}
+            {%- capture related_entry -%}{{ related_score_padded }}|{{ related_stamp }}|{{ forloop.index0 }}{%- endcapture -%}
+            {%- assign related_entries = related_entries | append: related_entry | append: ';;' -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- if related_hits >= 2 -%}
+    {%- assign related_sorted = related_entries | split: ';;' | sort | reverse | slice: 0, 5 -%}
+    <aside class="related" aria-labelledby="related-title">
+        <h2 class="related__title" id="related-title">相关文章</h2>
+        <ul class="related__list">
+            {%- for related_row in related_sorted -%}
+            {%- comment -%} 末尾分隔符会切出一个空串，直接跳过 {%- endcomment -%}
+            {%- if related_row contains '|' -%}
+            {%- assign related_idx = related_row | split: '|' | last | plus: 0 -%}
+            {%- assign related_post = site.posts[related_idx] -%}
+            <li class="related__item"><a class="related__link" href="{{ related_post.url | relative_url }}">{{ related_post.title | escape }}</a><time class="related__date" datetime="{{ related_post.date | date_to_xmlschema }}">{{ related_post.date | date: '%Y-%m-%d' }}</time></li>
+            {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </aside>
+{%- endif -%}

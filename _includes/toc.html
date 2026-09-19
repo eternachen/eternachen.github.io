@@ -1,0 +1,62 @@
+{%- comment -%}
+  文章目录（TOC）
+  由「渲染后的 HTML」生成：kramdown 已经算好每个标题的 id="..."，
+  这里直接读取，绝不在 Liquid 里重新做 slug 化（无法可靠复刻其算法）。
+  渲染后 HTML 里代码块中的 < 已转义为 &lt;，因此不会误命中代码块里的 <h2。
+  调用方式：{%- include toc.html content=content -%}
+  退出条件：page.toc == false，或有效标题不足 3 个。
+
+  按 <h2 切片后，首个片段是第一个 <h2 之前的正文（其中可能只有 <h3>，
+  甚至整篇都没有 <h2>），所以第一个片段同样要收 <h3>，不能跳过。
+{%- endcomment -%}
+{%- assign toc_html = include.content -%}
+{%- assign toc_chunks = toc_html | split: '<h2' -%}
+
+{%- comment -%} 第一遍：统计有效标题数量，决定是否输出目录 {%- endcomment -%}
+{%- assign toc_count = 0 -%}
+{%- for chunk in toc_chunks -%}
+{%- if forloop.first -%}
+{%- assign toc_body = chunk -%}
+{%- else -%}
+{%- assign toc_head = chunk | split: '</h2>' | first -%}
+{%- if toc_head contains 'id="' -%}
+{%- assign toc_count = toc_count | plus: 1 -%}
+{%- endif -%}
+{%- assign toc_body = chunk | split: '</h2>' | slice: 1, 99 | join: '</h2>' -%}
+{%- endif -%}
+{%- assign toc_h3s = toc_body | split: '<h3' -%}
+{%- for h3 in toc_h3s offset: 1 -%}
+{%- assign h3_head = h3 | split: '</h3>' | first -%}
+{%- if h3_head contains 'id="' -%}
+{%- assign toc_count = toc_count | plus: 1 -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+
+{%- if page.toc != false and toc_count >= 3 -%}
+<details class="post-toc" open>
+    <summary class="post-toc__title">目录</summary>
+    <nav class="post-toc__nav" aria-label="文章目录">
+        <ol class="post-toc__list">
+            {%- for chunk in toc_chunks -%}
+            {%- if forloop.first -%}
+            {%- assign toc_body = chunk -%}
+            {%- else -%}
+            {%- assign toc_head = chunk | split: '</h2>' | first -%}
+            {%- if toc_head contains 'id="' -%}
+            <li class="post-toc__item post-toc__item--h2"><a class="post-toc__link" href="#{{ toc_head | split: 'id="' | last | split: '"' | first }}">{{ toc_head | split: '>' | slice: 1, 99 | join: '>' | strip_html | strip }}</a></li>
+            {%- endif -%}
+            {%- assign toc_body = chunk | split: '</h2>' | slice: 1, 99 | join: '</h2>' -%}
+            {%- endif -%}
+            {%- assign toc_h3s = toc_body | split: '<h3' -%}
+            {%- for h3 in toc_h3s offset: 1 -%}
+            {%- assign h3_head = h3 | split: '</h3>' | first -%}
+            {%- if h3_head contains 'id="' -%}
+            <li class="post-toc__item post-toc__item--h3"><a class="post-toc__link" href="#{{ h3_head | split: 'id="' | last | split: '"' | first }}">{{ h3_head | split: '>' | slice: 1, 99 | join: '>' | strip_html | strip }}</a></li>
+            {%- endif -%}
+            {%- endfor -%}
+            {%- endfor -%}
+        </ol>
+    </nav>
+</details>
+{%- endif -%}
