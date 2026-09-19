@@ -9,7 +9,7 @@ permalink: /about/
 ### 联系我
 
 - **微信：** vxjiulidaji
-- **邮箱：** <a herf="mailto:jiulidaji@qq.com">jiulidaji@qq.com</a>
+- **邮箱：** <a href="mailto:jiulidaji@qq.com">jiulidaji@qq.com</a>
 
 ### 个人站
 

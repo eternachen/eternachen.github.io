@@ -70,7 +70,9 @@ All the partial includes are under `_includes` directory.
 
 #### Header navigation links
 
-Feel free to add/edit links for your header in the file `header-links.html`.
+The header navigation is configured with the `nav` list in `_config.yml`; each
+entry takes a `label` and a `url` (plus `blank: true` to open in a new tab).
+`_includes/header-links.html` renders that list.
 
 #### Footer links
 

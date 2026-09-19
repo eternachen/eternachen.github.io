@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal blog built with Jekyll, hosted on GitHub Pages at `jiulidaji.cn`. The site uses the Minimal Mistakes Jekyll theme and contains technical blog posts about Linux, programming, and software development.
+This is a personal blog built with Jekyll, hosted on GitHub Pages at `jiulidaji.cn`. It ships its own hand-rolled theme — layouts, includes and stylesheets are all local — and contains technical blog posts about Linux, programming, and software development.
 
 ## Development Commands
 
@@ -34,10 +34,10 @@ bundle exec jekyll doctor
 ## Architecture
 
 - **Jekyll Structure**: Standard Jekyll static site generator with posts in `_posts/` directory
-- **Theme**: Uses Minimal Mistakes Jekyll theme (`minimal-mistakes-jekyll` gem)
-- **Configuration**: Main config in `_config.yml`, development config in `_config-dev.yml`
+- **Theme**: Hand-rolled, entirely local. `assets/css/main.scss` plus `assets/css/_sass/partials/*` hold every style; colours are CSS custom properties, with the light/dark palettes defined in `partials/_theme.scss` and the header toggle wired up by `assets/js/site.js`. `minimal-mistakes-jekyll` is still declared in the Gemfile but none of its layouts, includes or styles are used.
+- **Configuration**: Main config in `_config.yml`, development config in `_config-dev.yml`. The header navigation is the `nav` list in `_config.yml`.
 - **Content**: Blog posts are Markdown files with YAML front matter in `_posts/`
-- **Layouts**: Custom layouts in `_layouts/` directory
+- **Layouts**: Custom layouts in `_layouts/` directory (`_layouts_legacy/` keeps the pre-redesign Harmony layouts and is not built)
 - **Includes**: Reusable components in `_includes/` directory
 
 ## Key Files

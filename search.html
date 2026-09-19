@@ -1,43 +1,33 @@
 ---
 layout: default
-title: 搜索本站内容
+title: 搜索
 permalink: /search/
 ---
 
-<script async src="{{ site.baseurl }}/assets/js/search.js"></script>
-<script>
-    var baseurl = "{{ site.baseurl }}";
-</script>
-
-<form class="search" action="{{ site.baseurl }}/search">
-<input type="search" id="search" name="q" placeholder="搜索本站内容..." required>
-<button type="submit">搜索本站内容</button>
-</form>
-
-<div id="home" class="page-content wc-container">
-	<div class="posts"><hr>
-        <div id="search-results">
-        {% for post in site.posts %}
-            <div id="{{ post.id | replace: '/', '-' }}" style="display: none;">
-	        <div class="post">
-                <h3 class="post-title">
-                    <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
-                        {{ post.title }}
-    		        </a>
-		        </h3>
-                <p class="post-meta">
-                {% if post.categories.size > 0 %}
-                <span class="categories">
-                {{ post.categories | array_to_sentence_string }}
-                </span> |
-                {% endif %}
-                <span class="post-date">
-                {{ post.date | date: "%b %-d, %Y" }}
-                </span>
-                </p>
-            </div>
-            </div>
-        {% endfor %}
+<div class="page-content">
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ page.title }}</h1>
+            <p class="page-header__lede">在全部 {{ site.posts | size }} 篇文章中检索标题、标签与正文。</p>
         </div>
+
+        <form class="search-form" role="search" method="get" action="{{ '/search/' | relative_url }}">
+            <label class="visually-hidden" for="search">搜索关键字</label>
+            <input type="search" id="search" name="q" placeholder="输入关键字，例如 docker、iptables…"
+                   autocomplete="off" required>
+            <button type="submit">搜索</button>
+        </form>
+
+        <p class="search-status" id="search-status" hidden></p>
+        <div class="search-results" id="search-results"></div>
+
+        <noscript>
+            <p class="search-status">搜索需要启用 JavaScript。</p>
+        </noscript>
     </div>
 </div>
+
+<script>
+    window.SITE_BASEURL = "{{ site.baseurl }}";
+</script>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>

@@ -3,25 +3,32 @@ layout: default
 title: 博客分类
 permalink: /categories/
 ---
-<div class="page-content wc-container">
-  <h1>博客分类</h1><hr>
 
-  <ul id="label_box">
-  {% for category in site.categories %}
-    <li><a href="{{ site.baseurl }}/categories/#{{ category | first }}">{{ category | first }}<span>{{ category | last | size }}</span></a></li>
-  {% endfor %}
-  </ul>
+<div class="page-content">
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ page.title }}</h1>
+            <p class="page-header__lede">共 {{ site.categories | size }} 个分类，{{ site.posts | size }} 篇文章</p>
+        </div>
 
-<hr>
+        <div class="term-cloud">
+            {%- for category in site.categories %}
+            <a href="#{{ category[0] }}">{{ category[0] }}<span class="term-count">{{ category[1] | size }}</span></a>
+            {%- endfor %}
+        </div>
 
-  {% for category in site.categories %}
-  <h3 id="{{ category | first }}">{{ category | first }}</h3>
-  <!-- <span>{{ category | last | size }}</span> -->
-  <ul class="arc-list">
-      {% for post in category.last %}
-          <li>{{ post.date | date:"%d/%m/%Y"}} <a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-  </ul>
-  {% endfor %}
-
+        {%- for category in site.categories %}
+        <section class="term-group">
+            <h2 id="{{ category[0] }}">{{ category[0] }}</h2>
+            <ul class="term-list">
+                {%- for post in category[1] %}
+                <li>
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </li>
+                {%- endfor %}
+            </ul>
+        </section>
+        {%- endfor %}
+    </div>
 </div>

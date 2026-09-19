@@ -1,12 +1,22 @@
 ---
 layout: default
-title: "404 Page Not Found"
+title: 页面未找到
 permalink: 404.html
 ---
 
-<div class="page-content wc-container">
-  <h3>404 Page Not Found</h3>
-  <h4>The page you were looking for is not found.</h4>
-  <p>Sorry, we've misplaced that URL or it's pointing to something that 
-  	doesn't exist. Please <a href="{{ site.baseurl }}/">head back home</a> to try finding it again.</p>
+<div class="page-content">
+    <div class="container">
+        <div class="error-page">
+            <p class="error-page__code">404</p>
+            <h1>页面未找到</h1>
+            <p>很抱歉，你要找的页面不存在，或者链接已经失效。</p>
+            <p>
+                <a href="{{ '/' | relative_url }}">返回首页</a>
+                <span class="post-meta__dot" aria-hidden="true">·</span>
+                <a href="{{ '/archive/' | relative_url }}">浏览全部文章</a>
+                <span class="post-meta__dot" aria-hidden="true">·</span>
+                <a href="{{ '/tags/' | relative_url }}">按标签查找</a>
+            </p>
+        </div>
+    </div>
 </div>

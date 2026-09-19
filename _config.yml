@@ -105,3 +105,19 @@ legacy_theme:
 title: "九里大集 | Eternachen's Blog"
 email: jiulidaji@qq.com
 repository: eternachen/eternachen.github.io
+
+# Header navigation, rendered by _includes/header-links.html
+nav:
+  - label: 归档
+    url: /archive/
+  - label: 分类
+    url: /categories/
+  - label: 标签
+    url: /tags/
+  - label: 搜索
+    url: /search/
+  - label: 简历
+    url: /assets/files/resume.pdf
+    blank: true
+  - label: 关于
+    url: /about/

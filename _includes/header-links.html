@@ -1,30 +1,11 @@
-<ul>
-	<li>
-		<a href="{{ '/archive' | prepend: site.baseurl | prepend: site.url }}">归档</a><span>/</span>
-	</li>
-	<li>
-		<a href="{{ '/categories' | prepend: site.baseurl | prepend: site.url }}">分类</a><span>/</span>
-	</li>
-	<li>
-		<a href="{{ '/tags' | prepend: site.baseurl | prepend: site.url }}">标签</a><span>/</span>
-	</li>
-	<li>
-		<a href="{{ '/search' | prepend: site.baseurl | prepend: site.url }}">搜索</a><span>/</span>
-	</li>
-	<li>
-	<li>
-		<a href="{{ '/assets/files/resume.pdf' | prepend: site.baseurl | prepend: site.url }}" target="_blank">/ 简历</a>
-	</li>
-	<li>
-		<a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">关于</a><span>/</span>
-	</li>
-
-	<!-- {% if site.harmony.social.github %}
-	<li>
-		<a title="{{ site.harmony.social.github }} on Github"
-			href="https://github.com/gayanvirajith/harmony" target="_blank">
-			Download
-		</a><span>/</span>
-	</li>
-	{% endif %} -->
-</ul>
+<nav class="site-nav" aria-label="站内导航">
+    {%- for item in site.nav %}
+    {%- assign is_current = false %}
+    {%- if page.url == item.url %}
+    {%- assign is_current = true %}
+    {%- endif %}
+    <a href="{{ item.url | relative_url }}"
+       {%- if item.blank %} target="_blank" rel="noopener"{% endif %}
+       {%- if is_current %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+</nav>

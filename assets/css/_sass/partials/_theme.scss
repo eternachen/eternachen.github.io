@@ -1,0 +1,66 @@
+// ---------------------------------------------------------------------------
+// Palettes
+//
+// Every colour is a CSS custom property, so switching themes is a matter of
+// flipping `data-theme` on <html>. Resolution order:
+//
+//   1. html[data-theme="dark"]                     explicit dark
+//   2. html[data-theme="light"]                    explicit light (:root)
+//   3. prefers-color-scheme: dark                   no explicit choice -> OS
+// ---------------------------------------------------------------------------
+
+@mixin dark-palette {
+  --bg: #0f1216;
+  --bg-subtle: #131720;
+  --surface: #151a21;
+  --surface-2: #1c232d;
+  --text: #e6eaf0;
+  --text-muted: #98a2b3;
+  --text-faint: #6b7684;
+  --border: #242b35;
+  --border-strong: #333c48;
+  --accent: #7cabff;
+  --accent-hover: #a5c6ff;
+  --accent-soft: rgba(124, 171, 255, 0.12);
+  --accent-border: rgba(124, 171, 255, 0.38);
+  --code-bg: #1a212b;
+  --mark-bg: #4a3b12;
+  --header-bg: rgba(15, 18, 22, 0.82);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 10px 28px -18px rgba(0, 0, 0, 0.75);
+}
+
+:root {
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --bg-subtle: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f6;
+  --text: #1b1f24;
+  --text-muted: #5b6472;
+  --text-faint: #8b939f;
+  --border: #e6e8ec;
+  --border-strong: #d3d7de;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.09);
+  --accent-border: rgba(37, 99, 235, 0.35);
+  --code-bg: #f6f7f9;
+  --mark-bg: #fff3c4;
+  --header-bg: rgba(255, 255, 255, 0.82);
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-hover: 0 10px 28px -18px rgba(16, 24, 40, 0.35);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  @include dark-palette;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    color-scheme: dark;
+    @include dark-palette;
+  }
+}
