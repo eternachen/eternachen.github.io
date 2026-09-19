@@ -81,8 +81,9 @@ sass:
     sass_dir: assets/css/_sass
     style: compressed
 
-theme: minimal-mistakes-jekyll
-
+# This site ships its own layouts, includes and styles, so no gem theme is
+# declared. A theme: entry that isn't on GitHub Pages' allowed-gem list makes
+# the built-in Pages build fail with "theme could not be found".
 # Preserve old Harmony theme settings under legacy_theme in case we need them later
 legacy_theme:
   harmony:

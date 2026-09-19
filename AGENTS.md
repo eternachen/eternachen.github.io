@@ -34,7 +34,7 @@ bundle exec jekyll doctor
 ## Architecture
 
 - **Jekyll Structure**: Standard Jekyll static site generator with posts in `_posts/` directory
-- **Theme**: Hand-rolled, entirely local. `assets/css/main.scss` plus `assets/css/_sass/partials/*` hold every style; colours are CSS custom properties, with the light/dark palettes defined in `partials/_theme.scss` and the header toggle wired up by `assets/js/site.js`. `minimal-mistakes-jekyll` is still declared in the Gemfile but none of its layouts, includes or styles are used.
+- **Theme**: Hand-rolled, entirely local. `assets/css/main.scss` plus `assets/css/_sass/partials/*` hold every style; colours are CSS custom properties, with the light/dark palettes defined in `partials/_theme.scss` and the header toggle wired up by `assets/js/site.js`. No gem theme is declared — GitHub Pages' built-in build rejects `theme:` values outside its allowed-gem list, and nothing here needs one.
 - **Configuration**: Main config in `_config.yml`, development config in `_config-dev.yml`. The header navigation is the `nav` list in `_config.yml`.
 - **Content**: Blog posts are Markdown files with YAML front matter in `_posts/`
 - **Layouts**: Custom layouts in `_layouts/` directory (`_layouts_legacy/` keeps the pre-redesign Harmony layouts and is not built)
