@@ -14,3 +14,4 @@ vendor/bundle.sass-cache/
 Gemfile.lock
 .sass-cache/
 vendor/
+.reasonix/
